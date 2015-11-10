@@ -9,7 +9,7 @@ if [ -z "$NEW_HOSTNAME" ]; then
 fi
 
 if [ -z "$NEW_HOSTNAME" ]; then
- echo "Erro. Hostname incorrecto. A sair..."
+ echo "Erro. Hostname incorrecto ou em falta. A sair..."
  exit 1
 fi
 

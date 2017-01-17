@@ -27,4 +27,10 @@ else
  echo -e "$( hostname -I | awk '{ print $1 }' )\t$NEW_HOSTNAME" >> /etc/hosts
 fi
 
+if [ -n "$( grep "$OLD_HOSTNAME" /etc/mailname )" ]; then
+ sed -i "s/$OLD_HOSTNAME/$NEW_HOSTNAME/g" /etc/mailname
+else
+ echo -e "$( hostname -I | awk '{ print $1 }' )\t$NEW_HOSTNAME" >> /etc/mailname
+fi
+
 echo "Concluido com sucesso. Reinicie o sistema!"
